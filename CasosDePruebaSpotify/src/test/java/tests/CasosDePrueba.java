@@ -16,9 +16,7 @@ public class CasosDePrueba {
     //Atributos
     private WebDriver driver;
     private WebDriverWait wait;
-
     private JavascriptExecutor js;
-
     private String rutaDriver= System.getProperty("user.dir")+"\\src\\test\\resources\\drivers\\chromedriver.exe";
     private String propertyDriver = "webdriver.chrome.driver";
 
@@ -56,31 +54,7 @@ public class CasosDePrueba {
 
         btnRegistrarse.click();
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("email"))).sendKeys("ariana.niesi@tsoftglobal.com");
-
-        driver.findElement(By.name("confirm")).sendKeys("ariana.niesi@tsoftglobal.com");
-
-        driver.findElement(By.name("password")).sendKeys("123");
-
-        driver.findElement(By.name("displayname")).sendKeys("Ariana");
-
-        driver.findElement(By.id("day")).sendKeys("13");
-
-        Select cmbMes = new Select(driver.findElement(By.id("month")));
-
-        cmbMes.selectByValue("10");
-
-        driver.findElement(By.name("year")).sendKeys("1999");
-
-        WebElement optionMale = driver.findElement(By.xpath("//label[@for='gender_option_male']"));
-
-        js.executeScript("arguments[0].scrollIntoView();", optionMale);
-
-        optionMale.click();
-
-        driver.findElement(By.xpath("//label[@for='marketing-opt-checkbox']")).click();
-
-        driver.findElement(By.xpath("//label[@for='third-party-checkbox']")).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[contains(@id,'password')]"))).sendKeys("123");
 
         WebElement btnRegistro  = driver.findElement(By.xpath("//button[@type='submit']"));
 
@@ -90,6 +64,7 @@ public class CasosDePrueba {
 
         Assert.assertEquals(driver.findElement(By.xpath("//div[contains(text(),'Tu contraseña es')]")).getText(),"Tu contraseña es demasiado corta.");
     }
+
     @Test
     public void CP002_Dia_Invalido() {
 
@@ -99,33 +74,7 @@ public class CasosDePrueba {
 
         btnRegistrarse.click();
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("email"))).sendKeys("ariana.niesi@tsoftglobal.com");
-
-        driver.findElement(By.name("confirm")).sendKeys("ariana.niesi@tsoftglobal.com");
-
-        driver.findElement(By.name("password")).sendKeys("123454321");
-
-        driver.findElement(By.name("displayname")).sendKeys("Ariana");
-
-        driver.findElement(By.id("day")).sendKeys("39");
-
-        Select cmbMes = new Select(driver.findElement(By.id("month")));
-
-        cmbMes.selectByValue("10");
-
-        driver.findElement(By.name("year")).sendKeys("1999");
-
-        WebElement optionMale = driver.findElement(By.xpath("//label[@for='gender_option_male']"));
-
-        js.executeScript("arguments[0].scrollIntoView();", optionMale);
-
-
-        optionMale.click();
-
-        driver.findElement(By.xpath("//label[@for='marketing-opt-checkbox']")).click();
-
-
-        driver.findElement(By.xpath("//label[@for='third-party-checkbox']")).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[contains(@id,'day')]"))).sendKeys("33");
 
         WebElement btnRegistro  = driver.findElement(By.xpath("//button[@type='submit']"));
 
@@ -144,31 +93,7 @@ public class CasosDePrueba {
 
         btnRegistrarse.click();
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("email"))).sendKeys("ariana.niesi@tsoftglobal.com");
-
-        driver.findElement(By.name("confirm")).sendKeys("ariana.niesi@tsoftglobal.com");
-
-        driver.findElement(By.name("password")).sendKeys("123454321");
-
-        driver.findElement(By.name("displayname")).sendKeys("");
-
-        driver.findElement(By.id("day")).sendKeys("13");
-
-        Select cmbMes = new Select(driver.findElement(By.id("month")));
-
-        cmbMes.selectByValue("10");
-
-        driver.findElement(By.name("year")).sendKeys("1999");
-
-        WebElement optionMale = driver.findElement(By.xpath("//label[@for='gender_option_male']"));
-
-        js.executeScript("arguments[0].scrollIntoView();", optionMale);
-
-        optionMale.click();
-
-        driver.findElement(By.xpath("//label[@for='marketing-opt-checkbox']")).click();
-
-        driver.findElement(By.xpath("//label[@for='third-party-checkbox']")).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[contains(@id,'displayname')]"))).sendKeys("");
 
         WebElement btnRegistro  = driver.findElement(By.xpath("//button[@type='submit']"));
 
@@ -187,31 +112,9 @@ public class CasosDePrueba {
 
         btnRegistrarse.click();
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("email"))).sendKeys("ariana.niesi@tsoftglobal.com");
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[starts-with(@id,'email')]"))).sendKeys("ariana.niesi@tsoftglobal.com");
 
-        driver.findElement(By.name("confirm")).sendKeys("");
-
-        driver.findElement(By.name("password")).sendKeys("123454321");
-
-        driver.findElement(By.name("displayname")).sendKeys("Ariana");
-
-        driver.findElement(By.id("day")).sendKeys("13");
-
-        Select cmbMes = new Select(driver.findElement(By.id("month")));
-
-        cmbMes.selectByValue("10");
-
-        driver.findElement(By.name("year")).sendKeys("1999");
-
-        WebElement optionMale = driver.findElement(By.xpath("//label[@for='gender_option_male']"));
-
-        js.executeScript("arguments[0].scrollIntoView();", optionMale);
-
-        optionMale.click();
-
-        driver.findElement(By.xpath("//label[@for='marketing-opt-checkbox']")).click();
-
-        driver.findElement(By.xpath("//label[@for='third-party-checkbox']")).click();
+        driver.findElement(By.xpath("//input[attribute::id='confirm']")).sendKeys("");
 
         WebElement btnRegistro  = driver.findElement(By.xpath("//button[@type='submit']"));
 
@@ -230,31 +133,7 @@ public class CasosDePrueba {
 
         btnRegistrarse.click();
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("email"))).sendKeys("ariana.niesi.tsoftglobal.com");
-
-        driver.findElement(By.name("confirm")).sendKeys("ariana.niesi.tsoftglobal.com");
-
-        driver.findElement(By.name("password")).sendKeys("123454321");
-
-        driver.findElement(By.name("displayname")).sendKeys("Ariana");
-
-        driver.findElement(By.id("day")).sendKeys("13");
-
-        Select cmbMes = new Select(driver.findElement(By.id("month")));
-
-        cmbMes.selectByValue("10");
-
-        driver.findElement(By.name("year")).sendKeys("1999");
-
-        WebElement optionMale = driver.findElement(By.xpath("//label[@for='gender_option_male']"));
-
-        js.executeScript("arguments[0].scrollIntoView();", optionMale);
-
-        optionMale.click();
-
-        driver.findElement(By.xpath("//label[@for='marketing-opt-checkbox']")).click();
-
-        driver.findElement(By.xpath("//label[@for='third-party-checkbox']")).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[starts-with(@id,'email')]"))).sendKeys("ariana.niesi.tsoftglobal.com");
 
         WebElement btnRegistro  = driver.findElement(By.xpath("//button[@type='submit']"));
 
@@ -264,4 +143,5 @@ public class CasosDePrueba {
 
         Assert.assertEquals(driver.findElement(By.xpath("//span[contains(text(),'Este correo electrónico no es válido')]")).getText(),"Este correo electrónico no es válido. Asegúrate de que tenga un formato como este: ejemplo@email.com");
     }
+
 }
