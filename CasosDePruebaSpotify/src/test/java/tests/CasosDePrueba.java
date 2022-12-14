@@ -142,6 +142,8 @@ public class CasosDePrueba {
         btnRegistro.click();
 
         Assert.assertEquals(driver.findElement(By.xpath("//span[contains(text(),'Este correo electrónico no es válido')]")).getText(),"Este correo electrónico no es válido. Asegúrate de que tenga un formato como este: ejemplo@email.com");
+
+        //ojala me guarde
     }
 
 }
