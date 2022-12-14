@@ -143,7 +143,7 @@ public class CasosDePrueba {
 
         Assert.assertEquals(driver.findElement(By.xpath("//span[contains(text(),'Este correo electrónico no es válido')]")).getText(),"Este correo electrónico no es válido. Asegúrate de que tenga un formato como este: ejemplo@email.com");
 
-        //ojala me guarde
+        //13/12/22
     }
 
 }
