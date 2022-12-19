@@ -1,6 +1,7 @@
 ejemplosSelenium\MetodosNavegadorNavegacionSelenium.class
 tests\CasosDePrueba.class
 ejemplosSelenium\ElementosWebSelenium.class
+tests\CPs.class
 pages\HomePage.class
 ejemplosSelenium\HolaMundoSelenium.class
 utils\BaseClass.class

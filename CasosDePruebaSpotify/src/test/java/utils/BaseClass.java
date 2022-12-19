@@ -31,9 +31,9 @@ public class BaseClass {
     //Métodos
     public BaseClass(WebDriver driver) {
         this.driver = driver;
-    } //constructor
+    }
 
-    //Enmascarar las acciones (Métodos) de selenium
+    //Enmascarar las acciones(Métodos) de selenium
 
     public WebElement buscarElementoWeb(By localizador){
         return this.driver.findElement(localizador);
@@ -133,16 +133,16 @@ public class BaseClass {
         driver.manage().window().maximize();
     }
 
-
     public void seleccionarDDlPorTexto(WebElement elemento,String texto){ //Febrero
         select = new Select(elemento);
         select.selectByVisibleText(texto);
     }
 
+
+
     public void cerrarBrowser(){
         this.driver.quit();
     }
-
 
 }
 

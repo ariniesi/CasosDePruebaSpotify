@@ -48,6 +48,9 @@ public class CasosDePrueba {
     @Test
     public void CP001_Contraseña_Corta() {
 
+
+
+
         By localizadorBtnRegistrase = By.xpath("//button[contains(text(),'Registrarte')]");
 
         WebElement btnRegistrarse = driver.findElement(localizadorBtnRegistrase);
@@ -143,7 +146,6 @@ public class CasosDePrueba {
 
         Assert.assertEquals(driver.findElement(By.xpath("//span[contains(text(),'Este correo electrónico no es válido')]")).getText(),"Este correo electrónico no es válido. Asegúrate de que tenga un formato como este: ejemplo@email.com");
 
-        //13/12/22
     }
 
 }
